@@ -1,19 +1,14 @@
 import './style.css';
-import testImage from './images/150.png'
+import Todo from './todo';
+// import testImage from './images/150.png'
 
-function component() {
-  const element = document.createElement('div');
+function home() {
+  const content = document.querySelector('#content');
 
-  element.textContent = 'Hello World!'
-  element.classList.add('hello');
-
-
-  const image = new Image();
-  image.src = testImage;
-
-  element.appendChild(image);
-
-  return element;
+  const todo = Todo('clean room')
+  todo.setTitle('new title')
+  content.textContent = todo.title;
+  return content;
 }
 
-document.body.appendChild(component());
+home();
